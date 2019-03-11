@@ -2,7 +2,7 @@ var https = require('https');
 
 function getAndPrintHTML (options) {
   var wholeData = '';
-  https.get(requestOptions, function (response, options) {
+  https.get(options, function (response) {
     response.setEncoding('utf8');
     response.on('data', function (chunk) {
       wholeData += chunk;
@@ -20,4 +20,4 @@ var requestOptions = {
   path: '/http-examples/step3.html'
 };
 
-console.log(getAndPrintHTML());
+console.log(getAndPrintHTML(requestOptions));
